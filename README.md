@@ -26,6 +26,27 @@ Npm: `cd <project-name> && npm install`
 
 Yarn: `cd <project-name> && yarn install`
 
+## :tophat: Folder Structure
+
+Everything about your project except maybe the index.html file is in the src folder and your should try to only edit what's inside this folder.
+
+```text
+|-- src
+    |-- Routes.js (should only include your routes and shared components)
+    |-- index.js (your main javascript file and the project's entry point)
+    |-- components (where the 'dumb components' will be created)
+    |   |-- Home
+    |   |   |-- Button.js
+    |   |-- shared
+    |       |-- PageHeader.js
+    |       |-- PageWrapper.js
+    |-- containers (your unstated containers should be created here)
+    |   |-- CounterContainer.js
+    |-- pages (the connection between unstated and the components happens here)
+        |-- About.js
+        |-- Home.js
+```
+
 ## :beers: Usage
 
 Since your project is now installed and ready to go, it is time to unleash your inner coding skills :sunglasses:
