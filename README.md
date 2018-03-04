@@ -1,4 +1,4 @@
-# react-unstated-boilerplate :relieved:
+# react-unstated-boilerplate
 
 ![David](https://img.shields.io/david/ahmedtarek2134/react-unstated-boilerplate.svg?style=for-the-badge) ![license](https://img.shields.io/github/license/ahmedtarek2134/react-unstated-boilerplate.svg?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/ahmedtarek2134/react-unstated-boilerplate.svg?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/ahmedtarek2134/react-unstated-boilerplate.svg?style=for-the-badge) ![Awesomeness](https://img.shields.io/badge/awesomeness-100%25-brightgreen.svg?style=for-the-badge)
 
