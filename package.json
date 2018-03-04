@@ -4,7 +4,7 @@
   "description": "A React boilerplate template using unstated, react-router-dom with eslint and parcel",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "start": "parcel -p 8080 index.html",
     "build": "parcel build index.html"
   },
