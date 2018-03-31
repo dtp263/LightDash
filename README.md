@@ -13,6 +13,7 @@
 * polished for a more powerful styled-components experience
 * unstated for an easy to use state management
 * Routing enabled with react-router-dom
+* Automatically install missing dependencies in your code, just import any module and it will be installed!
 
 ## :green_book: Installation
 
