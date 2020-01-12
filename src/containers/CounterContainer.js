@@ -1,7 +1,7 @@
 import { Container } from 'unstated'
 
 class Counter extends Container {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       count: 0
@@ -9,10 +9,12 @@ class Counter extends Container {
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
   }
-  increment () {
+
+  increment() {
     this.setState({ count: this.state.count + 1 })
   }
-  decrement () {
+
+  decrement() {
     this.setState({ count: this.state.count - 1 })
   }
 }

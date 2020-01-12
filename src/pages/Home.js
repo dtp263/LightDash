@@ -10,7 +10,7 @@ const Home = () => (
   <Wrapper>
     <Header>Home Page</Header>
     <Link to='/about'>Go to about page</Link>
-    <Subscribe to={[CounterContainer]} >
+    <Subscribe to={[CounterContainer]}>
       {counter => (
         <div>
           <h1 style={{ fontSize: '10rem', margin: '5% 0' }}>{counter.state.count}</h1>
