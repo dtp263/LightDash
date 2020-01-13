@@ -1,6 +1,10 @@
-import { Container } from 'unstated'
+import { Container } from 'unstated-typescript'
 
-class Counter extends Container {
+type CounterState = {
+  count: number
+}
+
+class Counter extends Container<CounterState> {
   constructor() {
     super()
     this.state = {
