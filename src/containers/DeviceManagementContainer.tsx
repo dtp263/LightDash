@@ -13,6 +13,23 @@ class DeviceManagement extends Container<DeviceManagementState> {
       devices: [],
     }
     this.addDevices = this.addDevices.bind(this)
+    this.getData = this.getData.bind(this)
+    this.getData().then((data) => {
+      console.log('DATA', data)
+      this.setState({
+        devices: data.SlaveNodes,
+      })
+    })
+  }
+
+  async getData() {
+    const response = await fetch('http://localhost:8000/cluster_info', {
+      method: 'GET',
+    })
+
+    console.log(response)
+
+    return await response.json()
   }
 
   addDevices(newdevices) {
