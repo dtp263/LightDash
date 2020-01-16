@@ -2,7 +2,7 @@ import { Container } from 'unstated-typescript'
 
 type DeviceManagementState = {
   isLoaded: boolean,
-  devices: Array<number>,
+  devices: Array<object>,
 }
 
 class DeviceManagement extends Container<DeviceManagementState> {
@@ -17,7 +17,7 @@ class DeviceManagement extends Container<DeviceManagementState> {
     this.getData().then((data) => {
       console.log('DATA', data)
       this.setState({
-        devices: data.SlaveNodes,
+        devices: data.SlaveDevices,
       })
     })
   }

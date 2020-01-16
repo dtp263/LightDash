@@ -7,7 +7,7 @@ import Wrapper from '../components/shared/PageWrapper'
 import PageHeader from '../components/shared/PageHeader'
 import DeviceCard from '../components/device_management/DeviceCard'
 
-const DeviceManagementPage = () => (
+const DashboardEdit = () => (
   <Wrapper>
     <PageHeader />
     <Container maxWidth="md">
@@ -18,7 +18,7 @@ const DeviceManagementPage = () => (
             deviceManager.state.devices.map((device) => (
               <ListItem key={device.NodeId}>
                 <DeviceCard>
-                  {device.NodeIPAddr}:{device.Port}
+                  {device.Host}:{device.Port}
                 </DeviceCard>
 
               </ListItem>
@@ -30,4 +30,4 @@ const DeviceManagementPage = () => (
   </Wrapper >
 )
 
-export default DeviceManagementPage
+export default DashboardEdit

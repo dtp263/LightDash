@@ -45,15 +45,22 @@ const PageHeader = () => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} component={Link} to="/">
-              Home
-        </MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/about">
-              About
-        </MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/device-management">
-              Device Management
-        </MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/">Home</MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/about">About</MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/device-management">Device Management</MenuItem>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to="/dashboard/edit">Dashboard Edit</MenuItem>
           </Menu>
         </Grid>
       </AppBar>
