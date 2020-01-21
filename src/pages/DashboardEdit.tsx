@@ -15,10 +15,20 @@ const DashboardEdit = () => (
         <Subscribe to={[DeviceManagement]}>
 
           {deviceManager =>
-            deviceManager.state.devices.map((device) => (
-              <ListItem key={device.NodeId}>
+            deviceManager.getMicrocontrollers().map((mc) => (
+              <ListItem key={mc.ID}>
                 <DeviceCard>
-                  {device.Host}:{device.Port}
+                  {mc.Host}:{mc.Port}
+
+                  {
+                    mc.Solenoids.map((solenoid) => {
+                      return (
+                        <div key={solenoid.UID}>
+                          {solenoid.Name}
+                        </div>
+                      )
+                    })
+                  }
                 </DeviceCard>
 
               </ListItem>

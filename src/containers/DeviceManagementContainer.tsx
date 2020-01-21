@@ -2,7 +2,9 @@ import { Container } from 'unstated-typescript'
 
 type DeviceManagementState = {
   isLoaded: boolean,
-  devices: Array<object>,
+  slaveMicrocontrollers: Array<object>,
+  master: Array<object>,
+  clusterName: String
 }
 
 class DeviceManagement extends Container<DeviceManagementState> {
@@ -10,14 +12,19 @@ class DeviceManagement extends Container<DeviceManagementState> {
     super()
     this.state = {
       isLoaded: false,
-      devices: [],
+      master: [],
+      slaveMicrocontrollers: [],
+      clusterName: ''
     }
-    this.addDevices = this.addDevices.bind(this)
+
+    this.getMicrocontrollers = this.getMicrocontrollers.bind(this)
     this.getData = this.getData.bind(this)
     this.getData().then((data) => {
       console.log('DATA', data)
       this.setState({
-        devices: data.SlaveDevices,
+        slaveMicrocontrollers: data.SlaveMicrocontrollers,
+        master: data.Master,
+        clusterName: data.Name
       })
     })
   }
@@ -32,10 +39,13 @@ class DeviceManagement extends Container<DeviceManagementState> {
     return await response.json()
   }
 
-  addDevices(newdevices) {
-    this.setState({
-      devices: this.state.devices.concat(newdevices)
-    })
+  getMicrocontrollers() {
+    if (this.state.slaveMicrocontrollers) {
+      return [...this.state.master, ...this.state.slaveMicrocontrollers]
+    }
+
+    return [this.state.master]
+
   }
 }
 
