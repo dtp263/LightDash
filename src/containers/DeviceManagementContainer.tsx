@@ -41,8 +41,9 @@ class DeviceManagement extends Container<DeviceManagementState> {
     }
 
     return [this.state.master]
-
   }
+
+
 }
 
 export default DeviceManagement

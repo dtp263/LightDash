@@ -12,6 +12,10 @@ class API {
 
     return await response.json()
   }
+
+  fireSolenoid() {
+
+  }
 }
 
 export default API
