@@ -1,4 +1,5 @@
 import { Container } from 'unstated-typescript'
+import API from '../utils/apiWrapper'
 
 type DeviceManagementState = {
   isLoaded: boolean,
@@ -20,7 +21,7 @@ class DeviceManagement extends Container<DeviceManagementState> {
     this.getMicrocontrollers = this.getMicrocontrollers.bind(this)
     this.getData = this.getData.bind(this)
     this.getData().then((data) => {
-      console.log('DATA', data)
+      console.log(data);
       this.setState({
         slaveMicrocontrollers: data.SlaveMicrocontrollers,
         master: data.Master,
@@ -30,13 +31,8 @@ class DeviceManagement extends Container<DeviceManagementState> {
   }
 
   async getData() {
-    const response = await fetch('http://localhost:8000/cluster_info', {
-      method: 'GET',
-    })
-
-    console.log(response)
-
-    return await response.json()
+    const api = new API("http://localhost:8000")
+    return api.getClusterInfo()
   }
 
   getMicrocontrollers() {
