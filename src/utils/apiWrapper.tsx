@@ -3,6 +3,8 @@ class API {
 
   constructor(url: string) {
     this.masterUrl = url
+
+    this.openSolenoid = this.openSolenoid.bind(this)
   }
 
   async getClusterInfo() {
@@ -13,8 +15,24 @@ class API {
     return await response.json()
   }
 
-  fireSolenoid() {
+  openSolenoid(uid) {
+    console.log('open', uid)
+    const queryUrl = 'http://' + this.masterUrl + '/component/' + uid + '/open'
+    const response = fetch(queryUrl, {
+      method: 'GET'
+    }).then(data => {
+      console.log('open_solenoid_response', data)
+    })
+  }
 
+  closeSolenoid(uid) {
+    console.log('close', uid)
+    const queryUrl = 'http://' + this.masterUrl + '/component/' + uid + '/close'
+    const response = fetch(queryUrl, {
+      method: 'GET'
+    }).then(data => {
+      console.log('close_solenoid_response', data)
+    })
   }
 }
 

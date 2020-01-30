@@ -25,14 +25,9 @@ const DeviceManagementPage = () => {
 
             {deviceManager => {
               console.log(deviceManager.getMicrocontrollers())
-              const mcs = deviceManager.getMicrocontrollers()
-
               let sf = new SolenoidFactory
-
-              const solenoids = sf.makeSolenoidsFromManyMcs(mcs);
-
+              const solenoids = sf.makeSolenoidsFromManyMcs(deviceManager.getMicrocontrollers())
               console.log('solenoids', solenoids)
-
 
               const solenoidComponents = solenoids.map(solenoid => {
                 return (
@@ -40,15 +35,10 @@ const DeviceManagementPage = () => {
                 )
               })
 
-              console.log(solenoidComponents)
-
-
-
-
               return (
-                <>
+                <div>
                   {solenoidComponents}
-                </>
+                </div>
               )
             }}
           </Subscribe>
